@@ -58,14 +58,18 @@ for(var i=0; i<warriors.length; i++) {
     var damagePerson = document.createElement("h4");
     var healthPerson = document.createElement("h4");
     var warriorPerson = document.createElement("h4");
-    if (warriors[i].damage >= 2 && warriors[i].health >= 10 && warriors[i].warrior === true) {
+    if (warriors[i].damage >= 2 && warriors[i].health >= 10 && warriors[i].warrior === true && warriors[i].name.includes("a")||warriors[i].name.includes("A")) {
         namePerson.innerHTML = "Name: " + warriors[i].name;
         damagePerson.innerHTML = "Damage: " + warriors[i].damage;
-        healthPerson.innerHTML = "Health: " + warriors[i].health
+        healthPerson.innerHTML = "Health: " + warriors[i].health;
         warriorPerson.innerHTML = "Warrior: " + warriors[i].warrior;
-    } else if(warriors[i].name.includes("a")||warriors[i].name.includes("A")){
-        var element = document.getElementById(warriorPerson);
-        element.style.color = "#FF0000"
+        namePerson.innerHTML= "Name: " + warriors[i].name.fontcolor("red");        // namePerson.innerHTML= warriors[i].name.fontcolor("red");
+    //     namePerson.innerHTML= "Name: " + warriors[i].name.fontcolor("red");
+    } else if(warriors[i].damage >= 2 && warriors[i].health >= 10 && warriors[i].warrior === true){
+        namePerson.innerHTML = "Name: " + warriors[i].name;
+        damagePerson.innerHTML = "Damage: " + warriors[i].damage;
+        healthPerson.innerHTML = "Health: " + warriors[i].health;
+        warriorPerson.innerHTML = "Warrior: " + warriors[i].warrior;
     }
 
     person.appendChild(namePerson);
@@ -74,4 +78,6 @@ for(var i=0; i<warriors.length; i++) {
     person.appendChild(warriorPerson);
     wrapperEle.appendChild(person);
 }
+
+
 
